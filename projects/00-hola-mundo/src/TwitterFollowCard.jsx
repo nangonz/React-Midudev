@@ -16,7 +16,7 @@ export default function TwitterFollowCard({initialIsFollowing, userName, name}){
             <header className='tw-follow-card-header'>
                 <img 
                 className='tw-follow-card-avatar'
-                src={`https://unavatar.io/${userName} `}
+                src={`https://unavatar.io/${userName}`}
                 alt="profile pic" />
                 <div className='tw-follow-card-info'>
                     <strong>{name}</strong>

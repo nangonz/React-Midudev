@@ -11,7 +11,7 @@ export default function App(){
             isFollowing: true
         },
         {
-            userName:'pherald',
+            userName:'pheralb',
             name:'Pablo Heraldo',
             isFollowing: false
         },

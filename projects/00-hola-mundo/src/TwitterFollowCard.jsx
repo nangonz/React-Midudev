@@ -5,9 +5,11 @@ export default function TwitterFollowCard({initialIsFollowing, userName, name}){
     
     const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
     const text = isFollowing? 'Siguiendo' : 'Seguir'
-    const classNameFollowing = isFollowing? 'tw-follow-card-button is-following': 'tw-follow-card-button'
+    const classNameFollowing = isFollowing? 
+        'tw-follow-card-button is-following': 
+        'tw-follow-card-button'
     
-    const handleOnClick = (userName) =>{
+    const handleOnClick = () =>{
         setIsFollowing(!isFollowing)
     }
     
@@ -24,7 +26,7 @@ export default function TwitterFollowCard({initialIsFollowing, userName, name}){
                 </div>
             </header>
             <aside>
-                <button onClick={()=> handleOnClick(userName)} className={classNameFollowing}>
+                <button onClick={handleOnClick} className={classNameFollowing}>
                     <span className="tw-follow-card-buttonText">{text}</span> 
                     <span className="tw-follow-card-unfollow">Dejar de seguir</span>
                 </button>

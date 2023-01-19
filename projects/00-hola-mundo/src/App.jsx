@@ -1,4 +1,5 @@
 import TwitterFollowCard from "./TwitterFollowCard"
+import UseMemoExample from "./UseMemoExample"
 import './App.css'
 
 
@@ -9,7 +10,7 @@ export default function App(){
             id:1,
             userName:'midudev',
             name:'Miguel Angel Duran',
-            isFollowing: true
+            isFollowing: false
         },
         {
             id:2,
@@ -21,13 +22,13 @@ export default function App(){
             id:3,
             userName:'nangonz',
             name:'Damian Gonzalez',
-            isFollowing: true
+            isFollowing: false
         },
         {
             id:4,
             userName:'TMChein',
             name:'Tomás',
-            isFollowing: true
+            isFollowing: false
         },
 
     ]
@@ -47,6 +48,9 @@ export default function App(){
                     )
                 })
             }
+            <div>
+                <UseMemoExample/>
+            </div>
             
             
         </section>

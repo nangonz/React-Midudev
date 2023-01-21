@@ -35,12 +35,17 @@ function App() {
   const [winner, setWinner] = useState(null)
 
   const updateBoard = (index) => {
+    //no actualizamos esta posicion
+    //si ya tiene algo
     if(board[index]) return
     const newBoard = [...board]
+    //actualizar el tablero
     newBoard[index] = turn
     setBoard(newBoard)
+    //cambiar el turno
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
+    //revisar si hay ganador
     const newWinner = checkWinner(newBoard)
     if(newWinner){
       setWinner(newWinner)
@@ -75,6 +80,7 @@ function App() {
         })
       }
     </section>
+
     <section className='turn'>
       <Square isSelected={turn === TURNS.X}>
         {TURNS.X}
@@ -82,6 +88,32 @@ function App() {
       <Square isSelected={turn === TURNS.O}>
         {TURNS.O}
       </Square>
+    </section>
+
+    <section>
+      {
+        winner !== null && (
+          <section className="winner">
+            <div className="text">
+              <h2>
+                {
+                  winner === false
+                   ? 'Empate'
+                   : 'Ganó'
+                }
+              </h2>
+
+              <header className="win">
+                {winner && <Square>{winner}</Square>}
+              </header>
+
+              <footer><button>Nueva Partida</button></footer>
+            </div>
+
+          </section>
+        )
+
+      }
     </section>
     </main>
   )

@@ -45,7 +45,6 @@ function App() {
     if(newWinner){
       setWinner(newWinner)
     }
-
   }
 
   const checkWinner = (boardToCheck) =>{

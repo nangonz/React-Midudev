@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/nangonz/React-Midudev/issues"
   },
-  "homepage": "https://github.com/nangonz/React-Midudev#readme"
+  "homepage": "https://github.com/nangonz/React-Midudev#readme",
+  "devDependencies": {
+    "standard": "^17.0.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
 }

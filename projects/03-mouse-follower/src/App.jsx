@@ -5,12 +5,9 @@ function App () {
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
-    console.log('effect', { enabled })
-
     const handleMove = (event) => {
       const { clientX, clientY } = event
       setPosition({ x: clientX, y: clientY })
-      console.log('handleMove', { clientX, clientY })
     }
 
     if (enabled) {
@@ -25,10 +22,18 @@ function App () {
     }
   }, [enabled])
 
+  useEffect(() => {
+    document.body.classList.toggle('no-cursor', enabled)
+
+    return () => {
+      document.body.classList.remove('no-cursor')
+    }
+  }, [enabled])
   return (
     <main>
       <h3>Mouse Follower</h3>
       <div style={{
+        display: `${enabled ? 'flex' : 'none'}`,
         position: 'absolute',
         backgroundColor: '#09f',
         borderRadius: '50%',

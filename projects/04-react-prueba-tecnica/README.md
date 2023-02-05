@@ -75,3 +75,14 @@ npm install standard -D
 }
 
 ```
+
+Recuerda desarrollar de manera incremental, esto para ir construyendo con más seguridad,  
+no abrumarse queriendo abarcar todo desde el principio. Los fetching de datos se hacen dentro  
+de un useEffect o un custom hook. De otra manera el fetching se efectuará cada vez que  
+renderice el componente.
+
+## Aprender a leer Documentación de APIs
+Lo primero que debemos hacer al hacer un fetching de datos es acceder a las APIs para saber  
+con que nos encontramos. Hay veces que se dan las APIs directamente pero pueden darte solo  
+la documentacion y tu deberas encontrar un endpoint que te devuelva los datos que tu necesitas. 
+

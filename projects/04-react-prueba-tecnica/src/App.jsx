@@ -5,14 +5,8 @@ import './App.css'
 // const CAT_ENDPOINT_IMAGE_URL = `https://cataas.com/cat/says/${firstWord}?size=50&color=red&json=true`
 const CAT_PREFIX_IMAGE_URL = 'https://cataas.com'
 
-export function App () {
-  const [fact, setFact] = useState()
+function useCatImage ({ fact }) {
   const [imageUrl, setImageUrl] = useState()
-
-  useEffect(async () => {
-    const newFact = await getRandomFact()
-    setFact(newFact)
-  }, [])
 
   useEffect(() => {
     if (!fact) return
@@ -25,6 +19,17 @@ export function App () {
         setImageUrl(url)
       })
   }, [fact])
+
+  return { imageUrl } // { imageUrl: 'https://...' }
+}
+
+export function App () {
+  const [fact, setFact] = useState()
+  const { imageUrl } = useCatImage({ fact })
+
+  useEffect(() => {
+    getRandomFact().then(newFact => setFact(newFact))
+  }, [])
 
   const handleClick = async () => {
     const newFact = await getRandomFact()

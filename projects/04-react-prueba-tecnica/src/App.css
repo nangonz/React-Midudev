@@ -6,8 +6,20 @@ main {
 
 img {
     width: 400px;
+    border-radius: 10px;
+    border: 6px solid burlywood;
 }
 
 p {
     width: 390px;
+    font-family:system-ui;
+    color: rgb(215, 219, 192);
+}
+
+h1 {
+    color: rgb(215, 219, 192);
+}
+
+body {
+    background: rgb(174, 163, 128);
 }

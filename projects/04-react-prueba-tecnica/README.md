@@ -86,3 +86,16 @@ Lo primero que debemos hacer al hacer un fetching de datos es acceder a las APIs
 con que nos encontramos. Hay veces que se dan las APIs directamente pero pueden darte solo  
 la documentacion y tu deberas encontrar un endpoint que te devuelva los datos que tu necesitas. 
 
+## Custom Hooks
+Los custom hooks `se utilizan para reutilizar logica` de nuestros componentes.  
+Para crear un custom hook necesitas crear una funcion que inicie con la palabra `use`   
+Dentro del cuerpo de la funcion podemos hacer lo que queramos por ejemplo hacer un return  
+de una cadena. Lo interesante de esta herramienta que nos provee react es que podemos usar  
+en el cuerpo de la función cualquiera de los hooks de react ya sea useState, useEffect,  
+useMemo, useCallback, etc, lo que convierte a esta herramienta en algo realmente poderoso.  
+
+## NOTA:
+En el custom hook `useCatImage({fact})` pasamos el parámetro `fact` en un objeto,  
+esto se hace porque se considera buena práctica, cumple con un principio de programacion  
+llamada extensibilidad del código.
+

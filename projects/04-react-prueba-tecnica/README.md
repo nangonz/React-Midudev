@@ -95,10 +95,22 @@ en el cuerpo de la función cualquiera de los hooks de react ya sea useState, us
 useMemo, useCallback, etc, lo que convierte a esta herramienta en algo realmente poderoso.  
 
 Dentro de lo posible se debe evitar exponer o devolver la actualizacion des estado,  
-si es algo que pueda hacer internamente el custom hook, mejor!
+si es algo que pueda hacer internamente el custom hook, mejor! Un tip: cada vez que veas  
+un useEffect en un componente preguntarse si debiera utilizar un custom hook, porque suele  
+suceder que programadores inexpertos abusen del uso del useEffect.
 
 ## NOTA:
 En el custom hook `useCatImage({fact})` pasamos el parámetro `fact` en un objeto,  
 esto se hace porque se considera buena práctica, cumple con un principio de programacion  
 llamada extensibilidad del código.
+
+Siempre es recomendable en una prueba tecnica hacer al menos un test end to end. En este ejemplo  
+vamos a usar playwright.
+
+```javascript
+
+npm init playwright@latest
+
+```
+
 

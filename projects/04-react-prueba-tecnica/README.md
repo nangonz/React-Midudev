@@ -94,6 +94,9 @@ de una cadena. Lo interesante de esta herramienta que nos provee react es que po
 en el cuerpo de la función cualquiera de los hooks de react ya sea useState, useEffect,  
 useMemo, useCallback, etc, lo que convierte a esta herramienta en algo realmente poderoso.  
 
+Dentro de lo posible se debe evitar exponer o devolver la actualizacion des estado,  
+si es algo que pueda hacer internamente el custom hook, mejor!
+
 ## NOTA:
 En el custom hook `useCatImage({fact})` pasamos el parámetro `fact` en un objeto,  
 esto se hace porque se considera buena práctica, cumple con un principio de programacion  

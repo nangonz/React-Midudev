@@ -1,1 +1,1 @@
-# Buscador de Peliculas: usamos hooks useRef, useMemo y useCallback
+# Buscador de Peliculas: hooks useRef, useMemo y useCallback

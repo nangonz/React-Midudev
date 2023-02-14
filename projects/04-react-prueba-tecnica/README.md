@@ -15,15 +15,15 @@ APIs:
 
 Ojo con utilizar templates en pruebas tecnicas, en general se les solicita  
 a los aspirantes hacer la conexión. En estos casos casos podemos instalar lo  
-minimo indispensable por ejemplo de vite (npm create vite@latest) y lo configures.  
+minimo indispensable por ejemplo de vite (`npm create vite@latest`) y lo configures.  
 Tienes que ser capaz de inicializar tu mismo el proyecto (punto de entrada).  
 
 Para ello npm create vite@latest y elegimos vanilla javascript para crear  
 nosotros mismos el punto de entrada y la configuracion inicial. En segundo  
-lugar necesitaremos instalar un plugin ( npm install @vitejs/plugin-react -E )  
+lugar necesitaremos instalar un plugin ( `npm install @vitejs/plugin-react -E` )  
 
 A continuación necesitaremos instalar las dependencias de react en nuestro proyecto  
-npm install react react-dom -E. Una que tiene los bondongs con el navegador y otra  
+`npm install react react-dom -E`. Una que tiene los bindings con el navegador y otra  
 que es la biblioteca de react que es la que tiene el useState y todo eso  
 
 Paso siguiente creamos la configuracion de vite en el directorio de nuestro proyecto  

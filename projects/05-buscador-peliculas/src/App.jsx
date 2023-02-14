@@ -2,7 +2,7 @@ import './App.css'
 
 function App () {
   return (
-    <h1>Buscador de Peliculas</h1>
+    <h1>Prueba Técnica</h1>
   )
 }
 

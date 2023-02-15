@@ -4,6 +4,8 @@
 `Crea una aplicación para buscar películas`
 ```
 API a usar: - https://www.omdbapi.com/
+https://www.omdbapi.com/?apikey=4a02753e&s=Avengers
+API_KEY: 4a02753e
 Consigue la API Key en la propia página web registrando tu email.
 ```
 
@@ -26,3 +28,13 @@ Consigue la API Key en la propia página web registrando tu email.
 ✅ Haz que la búsqueda se haga automáticamente al escribir.
 
 ✅ Evita que se haga la búsqueda continuamente al escribir (debounce)
+
+
+## Recomendación:
+Existen un montón de lo que se llaman frameworks classless que son frameworks css que no utilizan  
+clases, estos te permiten estilar rapidamente tu aplicacion. Un ejemplo es water.css o Bolt.css   
+pero existe una gran variedad.
+
+Siempre, antes de comenzar a codear, explorar la documentacion de la Api y ver como vienen estructuradas  
+las respuestas en los JSON. Es recomendable guardar un sample de la respuesta cuando hay resultados  
+y cuando no los hay, para agilizar el trabajo.

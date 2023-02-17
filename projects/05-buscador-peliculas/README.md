@@ -29,14 +29,12 @@ Consigue la API Key en la propia página web registrando tu email.
 
 ✅ Evita que se haga la búsqueda continuamente al escribir (debounce)
 
-<details open>
+<details>
     <summary><h3>Classless CSS Frameworks</h3></summary>
-    <p align="center">
-    Existen un montón de lo que se llaman frameworks classless que son frameworks css que no utilizan  
-    clases, estos te permiten estilar rapidamente tu aplicacion. Un ejemplo es water.css o Bolt.css   
-    pero existe una gran variedad.
+    Existen un montón de lo que se llaman <em>frameworks classless</em> que son frameworks css que no utilizan  
+    clases, estos te permiten estilar rapidamente tu aplicacion. Un ejemplo es water.css o Bolt.css  
+    pero existe una gran variedad.  
     Siempre, antes de comenzar a codear, explorar la documentacion de la Api y ver como vienen estructuradas  
     las respuestas en los JSON. Es recomendable guardar un sample de la respuesta cuando hay resultados  
     y cuando no los hay, para agilizar el trabajo.
-    </p>
 </details>

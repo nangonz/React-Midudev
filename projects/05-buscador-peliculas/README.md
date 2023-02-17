@@ -37,8 +37,14 @@ Consigue la API Key en la propia página web registrando tu email.
     Siempre, antes de comenzar a codear, explorar la documentacion de la Api y ver como vienen estructuradas  
     las respuestas en los JSON. Es recomendable guardar un sample de la respuesta cuando hay resultados  
     y cuando no los hay, para agilizar el trabajo.
-    <select>
-        <option>Water.css</option>
-        <option>Bolt.css</option>
-    </select>
+</details>
+
+<details>
+    <summary><h3>useRef REACT hook</h3></summary>
+    <p>
+    useRef nos permite crear una referencia mutable que persiste durante todo el ciclo de vida
+    del componente. Es muy util para guardar cualquier valor que puedas mutar como un identificador
+    como un elemento del DOM como un contador y que cada vez que cambie no vuelve a renderizar el
+    componente
+    </p>
 </details>

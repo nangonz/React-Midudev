@@ -2,7 +2,6 @@
 function ListOfMovies ({ movies }) {
   return (
     <ul>
-
       {
         movies.map(movie => (
           <li key={movie.id}>
@@ -12,7 +11,6 @@ function ListOfMovies ({ movies }) {
           </li>
         ))
       }
-
     </ul>
   )
 }

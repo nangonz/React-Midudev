@@ -47,4 +47,33 @@ Consigue la API Key en la propia página web registrando tu email.
     como un elemento del DOM como un contador y que cada vez que cambie no vuelve a renderizar el
     componente
     </p>
+    <code>
+    function App () {
+  const { movies: mappedMovies } = useMovies()
+  const inputRef = useRef()
+
+  const handleClick = () => {
+    const value = inputRef.current.value
+    alert(value)
+  }
+
+  return (
+    <div className='page'>
+
+      <header>
+        <h1>Buscador de Películas</h1>
+        <form className='form'>
+          <input ref={inputRef} placeholder='Avengers, Star Wars, The Matrix...' type='text' name='query' />
+          <button onClick={handleClick} type='submit'>Buscar</button>
+        </form>
+      </header>
+
+      <main>
+        <Movies movies={mappedMovies} />
+      </main>
+
+    </div>
+  )
+}
+    </code>
 </details>

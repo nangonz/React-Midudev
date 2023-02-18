@@ -48,3 +48,65 @@ Consigue la API Key en la propia página web registrando tu email.
     componente
     </p>
 </details>
+
+``` Javascript
+
+function App () {
+  const { movies: mappedMovies } = useMovies()
+  const inputRef = useRef() //--> No abusar de esto!
+
+  const handleSubmit = (event) => {
+    event.preventDefault() //--> Evita que se recargue la página.
+    const inputEl = inputRef.current
+    const query = inputEl.value
+    console.log(query) //--> recuperamos el valor del input
+  }
+
+  return (
+    <div className='page'>
+
+      <header>
+        <h1>Buscador de Películas</h1>
+        <form onSubmit={handleSubmit} className='form'>
+          <input ref={inputRef} placeholder='Avengers, Star Wars, The Matrix...' type='text' />
+          <button type='submit'>Buscar</button>
+        </form>
+      </header>
+
+      <main>
+        <Movies movies={mappedMovies} />
+      </main>
+
+    </div>
+  )
+}
+
+// Sin embargo podemos hacer esto sin necesidad de usar este hook:-----
+
+const handleSubmit = (event) => {
+    event.preventDefault()
+    const fields = new window.FormData(event.target)
+    const query = fields.get('query')
+    console.log({ query }) // vemos el valor del input en consola
+}
+
+// Para varios inputs --------------------------------------------------
+
+const handleSubmit = (event) => {
+    event.preventDefault()
+    const fields = Object.fromEntries(new window.FormData(event.target))
+    console.log(fields)
+    // aqui podrias hacer todas las validaciones sobre los inputs que necesites
+}
+
+```
+
+<details>
+    <summary><h3>Formularios No Controlados y Controlados</h3></summary>
+    <p>
+    El ejemplo anterior es una forma de aplicar formularios de manera no controlada.
+    Para hacerlo de manera controlada debemos vincular el value el input a un estado
+    de REACT y ante un evento onChange setear el estado con el nuevo valor. Una desventaja
+    es que cada vez que se hagamos un cambio se renderizará nuevamente el componente
+    </p>
+</details>

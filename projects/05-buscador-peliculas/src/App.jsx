@@ -1,15 +1,14 @@
 import './App.css'
 import { Movies } from './components/movies'
 import { useMovies } from './hooks/useMovies'
-import { useRef } from 'react'
 
 function App () {
   const { movies: mappedMovies } = useMovies()
-  const inputRef = useRef()
 
-  const handleClick = () => {
-    const value = inputRef.current.value
-    console.log(value)
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const { query } = Object.fromEntries(new window.FormData(event.target))
+    console.log(query)
   }
 
   return (
@@ -17,9 +16,9 @@ function App () {
 
       <header>
         <h1>Buscador de Películas</h1>
-        <form className='form'>
-          <input ref={inputRef} placeholder='Avengers, Star Wars, The Matrix...' type='text' name='query' />
-          <button onClick={handleClick} type='submit'>Buscar</button>
+        <form onSubmit={handleSubmit} className='form'>
+          <input name='query' placeholder='Avengers, Star Wars, The Matrix...' type='text' />
+          <button type='submit'>Buscar</button>
         </form>
       </header>
 

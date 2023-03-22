@@ -116,13 +116,4 @@ const handleSubmit = (event) => {
 
 <details>
     <summary><h3>useRef Hook para Evitar que se haga la misma búsqueda dos veces seguidas</h3></summary>
-    <p>
-    El ejemplo anterior es una forma de aplicar formularios de manera no controlada.
-    Para hacerlo de manera controlada debemos vincular el value del input a un estado
-    de REACT y ante un evento onChange setear el estado con el nuevo valor. Una desventaja
-    es que cada vez que se hagamos un cambio se renderizará nuevamente el componente y
-    si nuestra aplicaion fuese compleja el input se sentirá lento. Esto tiene algunas formas
-    de arreglarlo con un hook pero aún así lo más ideal es evitarlo. La ventaja que tiene
-    es que facilita las validaciones de los formularios.
-    </p>
 </details>

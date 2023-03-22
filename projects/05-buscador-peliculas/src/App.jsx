@@ -40,7 +40,7 @@ function App () {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    getMovies()
+    getMovies({ search })
   }
 
   const handleChange = (event) => {
@@ -57,7 +57,7 @@ function App () {
       <header>
         <h1>Buscador de Películas</h1>
         <form onSubmit={handleSubmit} className='form'>
-          <input type='checkbox' onClick={handleSort} checked={sort} />
+          <input type='checkbox' onChange={handleSort} checked={sort} />
           <input
             style={{
               border: '2px solid transparent',

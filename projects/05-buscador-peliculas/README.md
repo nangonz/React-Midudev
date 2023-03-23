@@ -116,4 +116,92 @@ const handleSubmit = (event) => {
 
 <details>
     <summary><h3>useRef Hook para Evitar que se haga la misma búsqueda dos veces seguidas</h3></summary>
+    <p>
+    Al permitirnos crear una referencia mutable que persiste durante todo el ciclo de vida
+    del componente podemos usar este hook para evitar que se haga la misma busqueda de manera consecutiva.
+    Al cambiar el search se vuelve a renderizar el componente pero tenemos guardada la referencia de la 
+    búsqueda previa esto nos permite compararlas.
+    </p>
+</details>
+
+<details>
+    <summary><h3>useMemo(()=>{}, []) and useCallback(()=>{}, []) Hook</h3></summary>
+    <p>
+    En esta prueba técnica tenemos un input para las peliculas que vamos a buscar y otro para ordenar
+    las peliculas de acuerdo a su título. Para ello tenemos en nuestro useMovies custom hook una funcion
+    llamada 'sortedMovies'. Pero sucede que cada vez que cambiamos nuestro input de busqueda se vuelve a
+    ejecutar el sortedMovies. Esto si tuvieramos que ordenar una gran cantidad de películas nos provocaría una
+    perdida de rendimiento. Todo lo que esta en el cuerpo de la funcion es el render por lo tanto cada vez
+    que cambia el search vuelve a recrearse la funcion sortedMovies y vuelve a calcular el ordenamiento y 
+    esto no es necesario.
+    </p>
+    <p>
+    No siempre va a ser necesario recurrir al useMemo, sólo cuando tengamos problemas de rendimiento. useMemo
+    nos permite memoizar un valor para no tener que volverlo a calcular a no ser que cambien las dependencias
+    , esto es mientras no cambie el dato que dispara el ordenamiento que no lo volverá a calcular aún cuando
+    el componente se re-renderice por cambio en otro estado como en nuestro ejemplo con 'search'.
+    </p>
+    <p>
+    Esto tambien se puede usar para memoizar una función. En nuestro ejemplo getMovies se vuelve a ejecutar
+    cada vez que cambia el search, esto es normal, pero también lo hace cada vez que cambiamos el input check de ordenamiento. useCallback hace esto mismo, es más por detrás está usando el useMemo, es sólo una sintáxis
+    azucarada ya que en lugar de pasarle a useMemo una funcion que devuelve una función a useCallback le pasamos
+    directamente la funcion que queremos memoizar.
+    </p>
+</details>
+
+``` Javascript
+//USEMEMO PARA MEMOIZAR UNA FUNCION
+const getMovies = useMemo(
+  return async ({ search }) => {
+  if (previousSearch.current === search) return
+  try {
+    setLoading(true)
+    setError(null)
+    previousSearch.current = search
+    const newMovies = await searchMovies({ search })
+    setMovies(newMovies)
+  } catch (e) {
+    setError(e.message)
+  } finally {
+    setLoading(false)
+  }
+}, [])
+//Podriamos colocar 'search' en el array de dependencias. Esto haría que la funcion
+//se vuelva a crear cada vez que cambia el search. Pasarlo como parámetro nos permite
+//lograr que solo se cree la funcion una vez.
+
+const getMovies = useCallback(async ({ search }) => {
+  if (previousSearch.current === search) return
+  try {
+    setLoading(true)
+    setError(null)
+    previousSearch.current = search
+    const newMovies = await searchMovies({ search })
+    setMovies(newMovies)
+  } catch (e) {
+    setError(e.message)
+  } finally {
+    setLoading(false)
+  }
+}, [])
+```
+
+<details>
+    <summary><h3>Debounce</h3></summary>
+    <p>
+    El debounce se usa para evitar la race condition, cuando queremos que la búsqueda se haga
+    automáticamente al escribir. Mientras el usuario escribe no vamos a hacer nada y cuando el usuario
+    deje de escribir un tiempo (300 a 500 milisegundos), la última llamada que ha hecho el
+    usuario dispara la búsqueda. Hay varias librerías para usar como lodash debounce, también pudes usar
+    un custom hook. En este proyecto vamos a usar una librería que se llama just de angus-c
+    </p>
+</details>
+
+<details>
+    <summary><h3>Monorepositorio multipaquetes</h3></summary>
+    <p>
+    Lo interesante de esto es que cuando estás en la raíz y haces npm install, se instalaran
+    todas las dependencias de todos los proyectos y reutilizará las dependencias para no tener
+    que instalar dos veces los mismo.
+    </p>
 </details>
